@@ -1,0 +1,6 @@
+Test Categories
+
+    Mode Switching: Verifies clean transition between Metals/Emoji modes (no overlay bugs)
+    Performance: Measures FPS with 20/60/100/200 items (target: ≥45 FPS)
+    Physics: Validates equilibrium detection and tilt direction accuracy
+    Localization: Confirms RU/EN text switching works correctly

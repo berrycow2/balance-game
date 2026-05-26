@@ -1,0 +1,8 @@
+ Technology Stack
+
+    Frontend: HTML5, CSS3, Vanilla JavaScript (ES6+)
+    Graphics: Canvas 2D API with devicePixelRatio support
+    Physics: Custom damped pendulum simulation (no external libraries)
+    Input: Unified pointer events (mouse + touch)
+    Localization: Simple dictionary-based i18n system
+    Testing: In-browser test framework with performance monitoring

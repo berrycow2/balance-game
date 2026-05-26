@@ -1,0 +1,52 @@
+You are an expert full-stack developer specializing in educational games and physics simulations. Create a single-file HTML5 application called "Balance Scale Simulator" with the following specifications:
+
+## CORE REQUIREMENTS
+1. Single HTML file containing all HTML, CSS, and JavaScript (zero external dependencies)
+2. Canvas 2D rendering with devicePixelRatio support for crisp graphics on all screens
+3. Realistic physics: damped pendulum simulation where beam angle = clamp((rightWeight - leftWeight) * ANGLE_PER_KG, -MAX_ANGLE, MAX_ANGLE) with angular velocity damping
+4. Two visual modes toggleable via button:
+   - Metals mode: 16 unique metallic weights (Copper, Gold, Platinum, etc.) with 3-color linear gradients
+   - Emoji mode: 85 nature/everyday objects (🪶 Feather, 🍉 Watermelon, 🐘 Elephant, etc.) with emoji rendering
+5. 17 discrete weight values: [1,2,3,5,7,10,12,15,17,22,27,31,32,39,45,50,75] kg
+6. At session start, randomly select 17 items from the active mode pool and assign to weight values
+
+## INTERACTION
+- Drag & drop: mouse and touch support for picking items from bottom tray and placing on left/right scale pans
+- Full-screen drop zones: left half of screen → left pan, right half → right pan
+- Items stack on pans with random X offset and calculated Y offset; adaptive scaling (100% for ≤5 items, down to 12% min) prevents overflow
+- Click/tap item on pan to remove it; remaining items animate to new positions
+
+## UI COMPONENTS
+- Top-right control bar with circular buttons: Report 📜, Share 🔗, Info ?, Mix 🔀, Lang 🌐, Mode 😐/😄, Reset ⟳
+- Hint text at bottom center (localized)
+- Tooltip on hover over tray items showing name (with edge-of-screen protection)
+- Report modal: scroll-style design with item breakdown, totals, and share button
+- Info modal: game instructions and GitHub link
+- Debug panel (toggle via 🧪 button): structured logging, FPS counter, render time, item count
+
+## LOCALIZATION
+- Bilingual support: Russian (default) and English
+- Dictionary-based i18n system with t(key) helper function
+- All user-facing text must use localization keys
+
+## PERFORMANCE & OPTIMIZATION
+- Target 60 FPS on modern devices; maintain ≥45 FPS with 100+ items on screen
+- Optimizations: skip off-screen rendering, limit DPR to 2, particle cleanup, efficient hit-testing
+- Built-in performance monitor tracking FPS, render time, and item count
+
+## TESTING
+- Integrated test framework with 4 test categories:
+  1. Mode switching: verify no overlay bugs when toggling Metals/Emoji
+  2. Performance: measure FPS with 20/60/100/200 items
+  3. Physics: validate equilibrium detection and tilt direction
+  4. Localization: confirm RU/EN text switching
+- Structured logging system (TestLogger) with color-coded entries and console output
+
+## METADATA BLOCK (REQUIRED at top of script)
+```javascript
+const CODE_VERSION = "1.2.0";
+const AUTHOR = "Vladimir Biryukov";
+const DATE = "26th of May, 2026";
+const PLACE = "Vladivostok, Russia";
+const COAUTHOR1 = "Model Qwen3.6-Plus (created by Alibaba Cloud)";
+const COAUTHOR2 = "Artificial Intellect GPT-3.5 (based on technologies by OpenAI)";

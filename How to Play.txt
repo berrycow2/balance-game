@@ -1,0 +1,8 @@
+How to Play
+
+    Pick an item from the bottom tray (click/tap)
+    Drag to left or right half of screen
+    Release to place on corresponding scale pan
+    Observe the beam tilt based on weight difference
+    Achieve balance when beam is horizontal (⚖ indicator appears)
+    View report for detailed breakdown of placed items

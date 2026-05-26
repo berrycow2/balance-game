@@ -1,0 +1,67 @@
+
+---
+
+## 📁 ФАЙЛ 3: `CHANGELOG.md`
+
+```markdown
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.2.0] - 2026-05-26
+
+### Added
+- 🧪 Built-in automated test suite with 4 test categories (modes, perf, physics, i18n)
+- 📊 Real-time performance monitoring (FPS, render time, item count)
+- 🐛 Debug console panel with structured logging and clear button
+- 🌐 Bilingual UI toggle (RU/EN) with full localization support
+- 🔗 Share functionality with native API + clipboard fallback
+- ℹ️ Info modal with game instructions and GitHub link
+- 📱 Adaptive 2-row tray layout for mobile screens (<900px width)
+- 🎨 Visual feedback: particles on drop, balance glow effect, tooltip on hover
+
+### Fixed
+- 🐛 Critical bug: Item overlay when switching between Metals/Emoji modes (fixed by explicit array clearing in `initSession()`)
+- 🐛 Mobile hit areas too small (increased tolerance to `Math.max(28, 15*scale)`)
+- 🐛 Tooltip positioning off-screen (added edge protection with `Math.min/max`)
+- 🐛 Performance drop with 30+ items (added off-screen culling in `drawPan`/`drawTray`)
+
+### Changed
+- ♻️ Refactored `drawItem()` to unify metal/emoji rendering logic
+- ♻️ Optimized render loop: skip off-screen elements, limit DPR to 2
+- ♻️ Improved stack animation: smoother settling with `targetRy` interpolation
+- ♻️ Enhanced report modal: localized content, share button, scroll styling
+
+### Removed
+- ❌ Interactive weight adjustment triangles (▲▼) — simplified UX per user request
+
+### Performance
+- ⚡ Stable 60 FPS with ≤100 items on modern devices
+- ⚡ 50+ FPS maintained even with 200 items (adaptive scaling + culling)
+
+## [1.1.0] - 2026-05-25
+
+### Added
+- 🎨 Two visual modes: Metals (16 unique gradients) and Emoji (85 objects)
+- 🔄 Mix button to randomize tray item order
+- 📜 Report modal with item breakdown and balance status
+- 🌊 Damped pendulum physics with configurable constants
+- 📐 Adaptive item scaling (100% → 12%) for large stacks
+- 🖱️ Unified pointer events for mouse/touch support
+
+### Fixed
+- 🐛 Scale pan positioning relative to beam rotation
+- 🐛 Item hit detection with adaptive tolerance
+- 🐛 Mobile touch event conflicts with page scroll
+
+## [1.0.0] - 2026-05-24
+
+### Added
+- 🎮 Initial release: Basic balance scale simulator
+- 🖱️ Drag-and-drop interaction
+- ⚖️ Simple physics: beam tilt proportional to weight difference
+- 🎨 Visual design: wooden stand, copper beam, chain suspension
+- 📱 Responsive layout for desktop/mobile

@@ -1,0 +1,12 @@
+balance-game/
+├── index.html          # Single-file application (HTML+CSS+JS)
+├── README.md           # This file
+├── CHANGELOG.md        # Version history
+├── LICENSE.txt         # MIT license (English)
+├── LICENSE_ru.txt      # MIT license (Russian translation)
+├── CONTRIBUTING.md     # Guidelines for contributors
+├── REQUIREMENTS.md     # Technical requirements & constraints
+├── structure.md        # Code architecture documentation
+├── LESSONS_LEARNED.md  # Development insights and pitfalls
+├── PROMPT.txt          # Ideal prompt for AI regeneration
+└── CHALLENGES.md       # Complex problems solved during development
